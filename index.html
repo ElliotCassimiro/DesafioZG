@@ -125,8 +125,20 @@
     "Eu sou um deles, você também",
     "Você Louvemos ao Senhor",
 
-    "Braço direito! Braço esquerdo! Perna direita! Perna esquerda! Balança a cabeça!",
+    "Braço direito! Braço esquerdo! Perna direita! Perna esquerda!",
+    "Balança a cabeça!",
 
+    "Braço direito! Braço esquerdo! Perna direita! Perna esquerda!",
+    "Balança a cabeça! Dá uma voltinha!",
+  
+    "Braço direito! Braço esquerdo! Perna direita! Perna esquerda!",
+    "Balança a cabeça! Dá uma voltinha! Dá um pulinho!",
+  
+    "Braço direito! Braço esquerdo! Perna direita! Perna esquerda!",
+    "Balança a cabeça! Dá uma voltinha! Dá um pulinho! E abraça o irmão!",
+  
+    
+    
     "O senhor tem muitos filhos",
     "Muitos filhos ele tem",
     "Eu sou um deles, você também",
@@ -148,9 +160,7 @@
     if (index >= lyrics.length) {
       return;
     }
-    // Imprimir a linha correspondente ao índice no console
     console.log(lyrics[index]);
-    // Chamar a mesma função com o índice incrementado e um tempo de espera
     setTimeout(function() {
       printLyrics(lyrics, index + 1, waitTime);
     }, waitTime);
