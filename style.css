@@ -1,0 +1,79 @@
+body {
+    background-image: url("/img/fundoBasilica.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f6ed9b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  #ipod {
+    background-color: #c5d5e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  h1 {
+    color: #324454;
+    text-align: center;
+  }
+
+  button {
+    font-size: 20px;
+    text-shadow: #9d9696 0 0 10px;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #b8c7e6;
+    color: #f5f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: #aca368 0 0 10px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+  
+  button:hover {
+    background-color: #8fb9d5;
+    color: #b8c7e6;
+    box-shadow: #9d9696 0 0 10px;
+  }
+  
+  button:active {
+    background-color: #f5f1f1;
+    color: #b8c7e6;
+    box-shadow: #8d8341 0 0 10px;
+    
+  }
+
+  progress {
+    width: 100%;
+    margin-top: 10px;
+    height: 10px;
+  }
+
+  div {
+    text-align: center; 
+    margin: 10px;
+    padding: 10px;   
+    
+  }
+
+  img {
+    width: 30%;
+    height: 30%;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+  }
