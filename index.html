@@ -44,6 +44,7 @@
   var firstPartStart = 0.0;
   var firstPartEnd = 139.0;
 
+  // file deepcode ignore RedeclarationVars: <please specify a reason of ignoring this>
   var lyrics = [
     "Erguei as mãos e dai glória a Deus",
     "Erguei as mãos e dai glória a Deus",
@@ -151,8 +152,8 @@
   ];
 
   // Definir o tempo de espera entre cada linha em milissegundos
-  var startTime = 21000;
-  var waitTime = 3500;
+  var waitTime = 3300;
+  var initialDelay = 22000;
 
 
   // Definir uma função que imprime a letra da música no terminal
@@ -166,9 +167,20 @@
     }, waitTime);
   }
 
+  // Definir uma função que imprime a letra da segunda parte no terminal
+  function printLyricsSecondPart(lyricsSecondPart, index, waitTime) {
+    if (index >= lyricsSecondPart.length) {
+      return;
+    }
+    console.log(lyricsSecondPart[index]);
+    setTimeout(function() {
+      printLyricsSecondPart(lyricsSecondPart, index + 1, waitTime);
+    }, waitTime);
+  }
+
   // Adicionar um evento de clique ao botão de tocar a música inteira
   playWhole.addEventListener("click", function() {
-    // Tocar o áudio do início ao fim
+    audio2.pause()
     audio.currentTime = 0;
     audio.play();
     // Imprimir a letra da música no terminal
@@ -177,16 +189,18 @@
         audio.pause();
       }
     })
-    printLyrics(lyrics, 0, waitTime);
+    setTimeout(function() {
+      printLyrics(lyrics, 0, waitTime);
+    }, initialDelay);
   });
 
   // Adicionar um evento de clique ao botão de tocar somente a primeira parte
   playFirst.addEventListener("click", function() {
-    // Tocar o áudio do início até o fim da primeira parte
+    audio2.pause()
     audio.currentTime = 0;
     audio.play();
     audio.addEventListener("timeupdate", function() {
-      if (audio.currentTime >= firstPartEnd) {
+      if (audio.currentTime >= firstPartEnd && audio.currentTime < secondPartStart) {
         audio.pause();
       }
     });
@@ -195,11 +209,12 @@
 
     // Adicionar um evento de clique ao botão de tocar a segunda parte
   playSecond.addEventListener("click", function() {
-      // Carrega o áudio da segunda parte
+      audio.pause();
+      
       audio2.load();
-      // Dispara o evento click
+      
       playSecond.click();
-      // Tocar o áudio da segunda parte
+
       audio2.currentTime = secondPartStart;
       audio2.play();
       audio2.addEventListener("timeupdate", function() {
@@ -207,7 +222,7 @@
           audio2.pause();
         }
       })
-      printLyrics(lyrics, 0, waitTime);
+      printLyricsSecondPart(lyricsSecondPart, 0, waitTime);
     });
     
     // adicionar um evento timeupdate ao audio para atualizar o progress bar
