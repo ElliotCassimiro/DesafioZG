@@ -8,8 +8,8 @@
   
   <div id="ipod">  
     <h1>Desafio da Música Erguei As Mãos</h1>
-      <audio id="audio" src="/Audio/erguei-as-maos.mp3"></audio>
-      <audio id="audio2" src="/Audio/erguei-as-maos-pt-2.mp3"></audio>
+      <audio controls id="audio" src="/Audio/erguei-as-maos.mp3"></audio>
+      
       
       <button id="playWhole">
         <img src="/img/wholeImage.png" alt="Play icon"> Tocar a música inteira
@@ -19,10 +19,11 @@
         <img src="/img/firstPartImage.png" alt="First part icon"> Tocar somente a primeira parte
       </button><br>
 
+      <audio controls id="audio2" src="/Audio/erguei-as-maos-pt-2.mp3"></audio>
+
       <button id="playSecond">
         <img src="/img/secondPartImage.png" alt="Second part icon"> Tocar somente a segunda parte
       </button><br>
-      <progress id="progressBar" value="0" max="100"></progress>
   </div>
 
 </body>
@@ -45,6 +46,7 @@
   var firstPartEnd = 139.0;
 
   // file deepcode ignore RedeclarationVars: <please specify a reason of ignoring this>
+  
   var lyrics = [
     "Erguei as mãos e dai glória a Deus",
     "Erguei as mãos e dai glória a Deus",
